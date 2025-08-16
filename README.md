@@ -1,30 +1,53 @@
-# Sunrise restaurant website
+# Sunrise Restaurant Website
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+Современный веб-сайт ресторана Sunrise с адаптивным дизайном и интерактивным меню.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/hkateev-5167s-projects/v0-sunrise-restaurant-website)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/yLbelIpSHti)
+## 🌟 Особенности
 
-## Overview
+- ✅ Адаптивный дизайн для всех устройств
+- ✅ Интерактивное меню с категориями блюд
+- ✅ Корзина покупок с локальным хранением
+- ✅ Мобильное меню с анимацией
+- ✅ Современный UI/UX дизайн
+- ✅ Оптимизированные изображения
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+## 🚀 Демо
 
-## Deployment
+Сайт доступен по адресу: **[https://rkateev.github.io/sunrise/](https://rkateev.github.io/sunrise/)**
 
-Your project is live at:
+## 📁 Структура проекта
 
-**[https://vercel.com/hkateev-5167s-projects/v0-sunrise-restaurant-website](https://vercel.com/hkateev-5167s-projects/v0-sunrise-restaurant-website)**
+```
+sunrise/
+├── index.html          # Главная страница
+├── menu.html           # Страница меню
+├── about.html          # О нас
+├── contacts.html       # Контакты
+├── cart.html           # Корзина
+├── profile.html        # Личный кабинет
+├── styles.css          # Основные стили
+├── script.js           # JavaScript функциональность
+├── public/             # Изображения и ресурсы
+└── .nojekyll           # Для GitHub Pages
+```
 
-## Build your app
+## 🛠 Технологии
 
-Continue building your app on:
+- HTML5
+- CSS3 (с CSS переменными и Flexbox/Grid)
+- Vanilla JavaScript
+- GitHub Pages для хостинга
 
-**[https://v0.app/chat/projects/yLbelIpSHti](https://v0.app/chat/projects/yLbelIpSHti)**
+## 📱 Адаптивность
 
-## How It Works
+Сайт полностью адаптивен и оптимизирован для:
+- 📱 Мобильные устройства
+- 📱 Планшеты
+- 💻 Десктопные компьютеры
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## 🎨 Дизайн
+
+- Современный минималистичный дизайн
+- Цветовая схема: красный (#dc2626) и нейтральные тона
+- Шрифты: Inter и Playfair Display
+- Плавные анимации и переходы
