@@ -10,7 +10,7 @@ const menuData = {
       description:
         "Сочный стейк из мраморной говядины, приготовленный на открытом огне до идеальной прожарки. Подается с авторским соусом и свежими травами.",
       price: 1200,
-      image: "grilled-ribeye.png",
+      image: "public/grilled-ribeye.png",
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ const menuData = {
       description:
         "Нежные свиные ребрышки, томленые в специальном маринаде и глазированные карамелизированным соусом барбекю. Подается с гарниром на выбор.",
       price: 950,
-      image: "glazed-pork-ribs.png",
+      image: "public/glazed-pork-ribs.png",
     },
   ],
   burgers: [
@@ -28,7 +28,7 @@ const menuData = {
       description:
         "Фирменный бургер с сочной говяжьей котлетой, выдержанным сыром чеддер, свежими овощами и специальным соусом шеф-повара.",
       price: 850,
-      image: "gourmet-burger.png",
+      image: "public/gourmet-burger.png",
     },
   ],
   salads: [
@@ -38,7 +38,7 @@ const menuData = {
       description:
         "Изысканный салат с кусочками маринованной говядины, свежими листьями салата, помидорами черри, авокадо и заправкой на основе бальзамического уксуса.",
       price: 650,
-      image: "beef-salad.png",
+      image: "public/placeholder.jpg",
     },
   ],
   desserts: [
@@ -48,7 +48,7 @@ const menuData = {
       description:
         "Изысканный шоколадный мусовый торт с нежными слоями глазури, украшенный золотым листом и свежими ягодами. Идеальное завершение трапезы.",
       price: 450,
-      image: "chocolate-dessert.png",
+      image: "public/placeholder.jpg",
     },
   ],
 }
@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function initializeMobileMenu() {
   const mobileMenuBtn = document.getElementById("mobileMenuBtn")
   const mobileMenu = document.getElementById("mobileMenu")
+  const mobileMenuClose = document.getElementById("mobileMenuClose")
 
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener("click", () => {
@@ -77,6 +78,22 @@ function initializeMobileMenu() {
       mobileMenuBtn.classList.toggle("active")
     })
   }
+
+  if (mobileMenuClose && mobileMenu) {
+    mobileMenuClose.addEventListener("click", () => {
+      mobileMenu.classList.remove("active")
+      if (mobileMenuBtn) mobileMenuBtn.classList.remove("active")
+    })
+  }
+
+  // Close menu when clicking on a link
+  const mobileNavLinks = document.querySelectorAll(".mobile-nav-link")
+  mobileNavLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("active")
+      if (mobileMenuBtn) mobileMenuBtn.classList.remove("active")
+    })
+  })
 }
 
 // Cart functions
@@ -191,13 +208,21 @@ function initializeAnimations() {
 }
 
 // Show category function
-function showCategory(category) {
+function showCategory(category, event = null) {
   const menuItems = document.getElementById("menuItems")
   const categoryBtns = document.querySelectorAll(".category-btn")
 
   // Update active button
   categoryBtns.forEach((btn) => btn.classList.remove("active"))
-  event.target.classList.add("active")
+  if (event && event.target) {
+    event.target.classList.add("active")
+  } else {
+    // Find the button for the default category
+    const defaultBtn = document.querySelector(`[onclick*="'${category}'"]`)
+    if (defaultBtn) {
+      defaultBtn.classList.add("active")
+    }
+  }
 
   // Clear current items
   menuItems.innerHTML = ""

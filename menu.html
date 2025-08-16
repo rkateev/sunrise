@@ -15,7 +15,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="index.html" class="logo">
-                    <img src="sunrise-logo.png" alt="Sunrise" class="logo-img">
+                    <img src="public/sunrise-logo.png" alt="Sunrise" class="logo-img">
                     <span class="logo-text">Sunrise</span>
                 </a>
                 
@@ -39,6 +39,19 @@
                 </button>
             </div>
         </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="mobile-menu-close" id="mobileMenuClose">×</button>
+            <nav class="mobile-nav">
+                <a href="menu.html" class="mobile-nav-link active">Меню</a>
+                <a href="about.html" class="mobile-nav-link">О нас</a>
+                <a href="contacts.html" class="mobile-nav-link">Контакты</a>
+                <a href="cart.html" class="mobile-nav-link">Корзина (<span id="mobileCartCount">0</span>)</a>
+                <a href="profile.html" class="mobile-nav-link">Личный кабинет</a>
+                <button class="reserve-btn mobile-reserve">Забронировать столик</button>
+            </nav>
+        </div>
     </header>
 
     <main style="padding-top: 80px;">
@@ -52,10 +65,10 @@
         <section class="menu-content">
             <div class="container">
                 <div class="menu-categories">
-                    <button class="category-btn active" onclick="showCategory('main')">Основные блюда</button>
-                    <button class="category-btn" onclick="showCategory('burgers')">Бургеры</button>
-                    <button class="category-btn" onclick="showCategory('salads')">Салаты</button>
-                    <button class="category-btn" onclick="showCategory('desserts')">Десерты</button>
+                    <button class="category-btn active" onclick="showCategory('main', event)">Основные блюда</button>
+                    <button class="category-btn" onclick="showCategory('burgers', event)">Бургеры</button>
+                    <button class="category-btn" onclick="showCategory('salads', event)">Салаты</button>
+                    <button class="category-btn" onclick="showCategory('desserts', event)">Десерты</button>
                 </div>
 
                 <div class="menu-items" id="menuItems">
@@ -70,7 +83,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="sunrise-logo.png" alt="Sunrise" class="footer-logo-img">
+                        <img src="public/sunrise-logo.png" alt="Sunrise" class="footer-logo-img">
                         <span class="footer-logo-text">Sunrise</span>
                     </div>
                     <p class="footer-description">Ресторан Sunrise — место, где качество и превосходство сочетаются с уютной атмосферой.</p>
