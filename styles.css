@@ -70,8 +70,8 @@ body {
   font-family: var(--font-serif);
   font-size: 1.5rem;
   font-weight: 700;
-  /* Changed logo text color to dark instead of red */
-  color: var(--text-dark);
+  /* Changed logo text color to white instead of dark */
+  color: var(--text-white);
 }
 
 .nav {
@@ -216,6 +216,8 @@ body {
   font-weight: 700;
   margin-bottom: 1rem;
   letter-spacing: 2px;
+  /* Changed hero title color to white instead of red */
+  color: var(--text-white);
 }
 
 .hero-subtitle {
@@ -369,6 +371,78 @@ body {
 }
 
 .btn-cart:hover {
+  background: var(--primary-color);
+  transform: scale(1.05);
+}
+
+/* Menu page styles */
+.menu-hero {
+  padding: 5rem 0 3rem;
+  background: var(--bg-light);
+  text-align: center;
+}
+
+.menu-description {
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.menu-content {
+  padding: 3rem 0 5rem;
+}
+
+.menu-categories {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  background: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--text-dark);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover,
+.category-btn.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.dish-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.add-to-cart-btn {
+  background: var(--text-dark);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
   background: var(--primary-color);
   transform: scale(1.05);
 }

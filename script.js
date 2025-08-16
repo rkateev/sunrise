@@ -1,12 +1,69 @@
 // Cart functionality
 const cart = JSON.parse(localStorage.getItem("cart")) || []
 
+// Menu data and showCategory function
+const menuData = {
+  main: [
+    {
+      id: 1,
+      name: "Стейк Рибай",
+      description:
+        "Сочный стейк из мраморной говядины, приготовленный на открытом огне до идеальной прожарки. Подается с авторским соусом и свежими травами.",
+      price: 1200,
+      image: "grilled-ribeye.png",
+    },
+    {
+      id: 2,
+      name: "Ребрышки барбекю",
+      description:
+        "Нежные свиные ребрышки, томленые в специальном маринаде и глазированные карамелизированным соусом барбекю. Подается с гарниром на выбор.",
+      price: 950,
+      image: "glazed-pork-ribs.png",
+    },
+  ],
+  burgers: [
+    {
+      id: 3,
+      name: 'Бургер "Sunrise"',
+      description:
+        "Фирменный бургер с сочной говяжьей котлетой, выдержанным сыром чеддер, свежими овощами и специальным соусом шеф-повара.",
+      price: 850,
+      image: "gourmet-burger.png",
+    },
+  ],
+  salads: [
+    {
+      id: 4,
+      name: "Салат с говядиной",
+      description:
+        "Изысканный салат с кусочками маринованной говядины, свежими листьями салата, помидорами черри, авокадо и заправкой на основе бальзамического уксуса.",
+      price: 650,
+      image: "beef-salad.png",
+    },
+  ],
+  desserts: [
+    {
+      id: 5,
+      name: "Шоколадный десерт",
+      description:
+        "Изысканный шоколадный мусовый торт с нежными слоями глазури, украшенный золотым листом и свежими ягодами. Идеальное завершение трапезы.",
+      price: 450,
+      image: "chocolate-dessert.png",
+    },
+  ],
+}
+
 // Update cart count on page load
 document.addEventListener("DOMContentLoaded", () => {
   updateCartCount()
   initializeMobileMenu()
   initializeMap()
   initializeAnimations()
+
+  // Load default category (main dishes) if on menu page
+  if (document.getElementById("menuItems")) {
+    showCategory("main")
+  }
 })
 
 // Mobile menu functionality
@@ -131,6 +188,41 @@ function initializeAnimations() {
   // Observe elements for animation
   const animateElements = document.querySelectorAll(".dish-card, .about-text, .contacts-info")
   animateElements.forEach((el) => observer.observe(el))
+}
+
+// Show category function
+function showCategory(category) {
+  const menuItems = document.getElementById("menuItems")
+  const categoryBtns = document.querySelectorAll(".category-btn")
+
+  // Update active button
+  categoryBtns.forEach((btn) => btn.classList.remove("active"))
+  event.target.classList.add("active")
+
+  // Clear current items
+  menuItems.innerHTML = ""
+
+  // Add items for selected category
+  menuData[category].forEach((item) => {
+    const menuItem = document.createElement("div")
+    menuItem.className = "dish-card"
+    menuItem.innerHTML = `
+      <div class="dish-image">
+        <img src="${item.image}" alt="${item.name}" loading="lazy">
+      </div>
+      <div class="dish-content">
+        <h3 class="dish-name">${item.name}</h3>
+        <p class="dish-description">${item.description}</p>
+        <div class="dish-footer">
+          <span class="dish-price">${item.price} ₽</span>
+          <button class="add-to-cart-btn" onclick="addToCart(${item.id}, '${item.name}', ${item.price}, '${item.image}')">
+            В корзину
+          </button>
+        </div>
+      </div>
+    `
+    menuItems.appendChild(menuItem)
+  })
 }
 
 // Smooth scrolling for anchor links
