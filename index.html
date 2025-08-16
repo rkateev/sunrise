@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunrise - Ресторан премиум-класса</title>
+    <meta name="description" content="Изысканная кухня в атмосфере элегантности и комфорта">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="public/sunrise-logo.png" alt="Sunrise" class="logo-img">
+                    <span class="logo-text">Sunrise</span>
+                </a>
+                
+                <nav class="nav desktop-nav">
+                    <a href="menu.html" class="nav-link">Меню</a>
+                    <a href="about.html" class="nav-link">О нас</a>
+                    <a href="contacts.html" class="nav-link">Контакты</a>
+                    <a href="cart.html" class="nav-link cart-link">
+                        <span>Корзина</span>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <a href="profile.html" class="nav-link">Личный кабинет</a>
+                </nav>
+                
+                <button class="reserve-btn">Забронировать столик</button>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <nav class="mobile-nav">
+                <a href="menu.html" class="mobile-nav-link">Меню</a>
+                <a href="about.html" class="mobile-nav-link">О нас</a>
+                <a href="contacts.html" class="mobile-nav-link">Контакты</a>
+                <a href="cart.html" class="mobile-nav-link">Корзина (<span id="mobileCartCount">0</span>)</a>
+                <a href="profile.html" class="mobile-nav-link">Личный кабинет</a>
+                <button class="reserve-btn mobile-reserve">Забронировать столик</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">SUNRISE</h1>
+                    <p class="hero-subtitle">Изысканная кухня в атмосфере элегантности и комфорта</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">Забронировать столик</button>
+                        <a href="menu.html" class="btn btn-secondary">Посмотреть меню</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+            <div class="container">
+                <h2 class="section-title">О нас</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Добро пожаловать в ресторан Sunrise</h3>
+                        <p>Ресторан Sunrise — это место, где современная европейская кухня встречается с традициями. Наша концепция основана на использовании только свежих, сезонных продуктов высочайшего качества.</p>
+                        <p>Мы создали неповторимую атмосферу для наших гостей, сочетая изысканную кухню, безупречный сервис и стильный интерьер. Каждое блюдо в нашем меню — это произведение кулинарного искусства, созданное с любовью и вниманием к деталям.</p>
+                        <p>Наша команда профессиональных поваров постоянно совершенствует свое мастерство, чтобы удивить вас новыми вкусовыми ощущениями и оригинальными подачами блюд.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Dishes -->
+        <section class="popular-dishes">
+            <div class="container">
+                <h2 class="section-title">Популярные блюда</h2>
+                <div class="dishes-grid">
+                    <div class="dish-card">
+                        <img src="public/grilled-ribeye.png" alt="Стейк Рибай" class="dish-image">
+                        <div class="dish-content">
+                            <h3 class="dish-name">Стейк Рибай</h3>
+                            <p class="dish-description">Сочный стейк из мраморной говядины, приготовленный на открытом огне до идеальной прожарки. Подается с авторским соусом и свежими травами.</p>
+                            <div class="dish-footer">
+                                <span class="dish-price">1200 ₽</span>
+                                <button class="btn-cart" onclick="addToCart('steak-ribeye', 'Стейк Рибай', 1200, 'public/grilled-ribeye.png')">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dish-card">
+                        <img src="public/gourmet-burger.png" alt="Бургер Sunrise" class="dish-image">
+                        <div class="dish-content">
+                            <h3 class="dish-name">Бургер "Sunrise"</h3>
+                            <p class="dish-description">Фирменный бургер с сочной говяжьей котлетой, выдержанным сыром чеддер, свежими овощами и специальным соусом. Подается с картофелем фри.</p>
+                            <div class="dish-footer">
+                                <span class="dish-price">850 ₽</span>
+                                <button class="btn-cart" onclick="addToCart('burger-sunrise', 'Бургер Sunrise', 850, 'public/gourmet-burger.png')">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dish-card">
+                        <img src="public/glazed-pork-ribs.png" alt="Ребрышки барбекю" class="dish-image">
+                        <div class="dish-content">
+                            <h3 class="dish-name">Ребрышки барбекю</h3>
+                            <p class="dish-description">Нежные свиные ребрышки, томленые в специальном маринаде и глазированные карамелизированным соусом барбекю. Подается с гарниром на выбор.</p>
+                            <div class="dish-footer">
+                                <span class="dish-price">950 ₽</span>
+                                <button class="btn-cart" onclick="addToCart('pork-ribs', 'Ребрышки барбекю', 950, 'public/glazed-pork-ribs.png')">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacts Section -->
+        <section class="contacts">
+            <div class="container">
+                <h2 class="section-title">Контакты</h2>
+                <div class="contacts-content">
+                    <div class="contacts-info">
+                        <h3>Как нас найти</h3>
+                        <div class="contact-item">
+                            <strong>Адрес</strong>
+                            <p>Грозный, пр. Кадырова 110</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Телефон</strong>
+                            <p>+7 (999) 123-45-67</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Часы работы</strong>
+                            <p>Пн-Чт: 12:00 - 23:00<br>
+                            Пт-Сб: 12:00 - 01:00<br>
+                            Вс: 12:00 - 22:00</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Email</strong>
+                            <p>info@sunrise-restaurant.ru</p>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <div id="map" class="map"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="public/sunrise-logo.png" alt="Sunrise" class="footer-logo-img">
+                        <span class="footer-logo-text">Sunrise</span>
+                    </div>
+                    <p class="footer-description">Ресторан Sunrise — место, где качество и превосходство сочетаются с уютной атмосферой. Мы создаем не просто блюда, а настоящие произведения искусства.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="menu.html">Меню</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>Грозный, пр. Кадырова 110</p>
+                    <p>+7 (999) 123-45-67</p>
+                    <p>info@sunrise-restaurant.ru</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Режим работы</h4>
+                    <p>Пн-Чт: 12:00 - 23:00</p>
+                    <p>Пт-Сб: 12:00 - 01:00</p>
+                    <p>Вс: 12:00 - 22:00</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ресторан Sunrise. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru_RU" type="text/javascript"></script>
+    <script src="script.js"></script>
+</body>
+</html>
